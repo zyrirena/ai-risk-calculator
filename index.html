@@ -16,7 +16,8 @@
                 <input type="text" id="modelName" placeholder="e.g. GPT-4, Llama-3, Internal Bot">
             </div>
         </header>
-
+<br>
+<br>
         <main class="grid">
             <div class="card">
                 <h3>Bias & Fairness</h3>
@@ -60,6 +61,46 @@
                 <textarea id="transNotes" placeholder="Transparency gaps..."></textarea>
             </div>
         </main>
+        <br>
+        <br>
+<section class="explanation">
+    <table>
+        <thead>
+            <tr>
+                <th>Score</th>
+                <th title="Likelihood: The likelihood score evaluates the probability of the risk occurring within the AI/ML system's lifecycle. Factors include vulnerabilities (e.g., data quality, adversarial threats), threat actors, and controls in place. Aligned with NIST AI RMF and ISO 42001.">Likelihood</th>
+                <th title="Impact: The impact score assesses the potential severity of consequences if the risk materializes. Includes harms to individuals, organizations, society, or the environment. Based on NIST AI RMF and ISO 31000 best practices.">Impact</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td title="Rare: Highly unlikely to occur. Example: Sophisticated adversarial attack on well-secured system. Guide: Choose based on low vulnerability and strong controls (<1% probability).">Rare</td>
+                <td title="Insignificant: Negligible or no noticeable harm. Example: Temporary minor inaccuracy in a non-critical system easily corrected without intervention.">Insignificant</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td title="Unlikely: Not anticipated under normal conditions. Example: Occasional data poisoning in a monitored pipeline. Guide: Select when historical data indicates infrequent events (1-10% probability).">Unlikely</td>
+                <td title="Minor: Limited harm with low severity. Example: Localized fairness issues or small data leakage without sensitive info exposure. Recoverable with minimal effort.">Minor</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td title="Possible: Might occur under certain conditions. Example: Model drift due to changing data distributions happening periodically. Guide: Apply for medium-probability risks (10-50%).">Possible</td>
+                <td title="Moderate: Noticeable harm requiring effort to mitigate. Affects system trustworthiness (accuracy, explainability). Example: Bias causing unfair outcomes for a group and complaints.">Moderate</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td title="Likely: Will probably occur in most circumstances without additional controls. Example: Bias amplification in AI trained on unrepresentative data. Guide: Assign to probable events (50-90%).">Likely</td>
+                <td title="Major: Significant harm with high severity. Widespread failures leading to legal violations or financial loss. Example: Adversarial attacks compromising an autonomous system.">Major</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td title="Certain: Expected to occur frequently or imminently. Near-certain due to inherent AI/ML vulnerabilities. Example: Prompt injection on unsecured generative models. Guide: Use for risks >90% probability.">Certain</td>
+                <td title="Catastrophic: Severe, irreversible harm. Example: Life-threatening errors, massive data breaches, or deepfakes causing societal unrest. Draw from EDPS or AWS guides.">Catastrophic</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
 
         <section class="results-area">
             <div class="button-group">

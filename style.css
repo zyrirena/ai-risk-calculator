@@ -13,6 +13,24 @@ body { font-family: 'Segoe UI', sans-serif; background: var(--bg-color); color: 
 
 .card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid #334155; }
 
+.explanation th, .explanation td {
+    cursor: help; /* Changes cursor to a question mark on hover */
+    position: relative;
+    padding: 12px;
+    border: 1px solid #334155;
+}
+
+.explanation tr:hover {
+    background-color: #1e293b; /* Subtle highlight when hovering over a row */
+}
+
+/* Optional: styling for the table headers to make them stand out */
+.explanation th {
+    background-color: #0f172a;
+    color: #38bdf8;
+    text-decoration: underline dotted; /* Visual cue that there is a tooltip */
+}
+
 /* The Mini Reference Table */
 .mini-ref {
     width: 100%;
@@ -35,6 +53,19 @@ label { display: block; margin: 10px 0 5px; font-weight: bold; font-size: 0.85re
 input { width: 60px; padding: 5px; background: #0f172a; color: white; border: 1px solid #475569; border-radius: 4px; }
 
 textarea { width: 100%; height: 60px; margin-top: 10px; background: #0f172a; color: white; border: 1px solid #475569; border-radius: 6px; padding: 8px; font-size: 0.8rem; resize: none; }
+
+/* Larger, full-width styling for the model name input */
+#modelName {
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    padding: 8px;
+    font-size: 1rem;
+    background: #0f172a;
+    color: white;
+    border: 1px solid #475569;
+    border-radius: 6px;
+}
 
 .results-area { margin-top: 30px; text-align: center; }
 
