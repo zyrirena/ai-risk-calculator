@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Risk Assessment Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div id="capture-area" class="container">
+        <header>
+            <h1>AI Risk Dashboard</h1>
+            <div class="model-input">
+                <label>GenAI Model Name:</label>
+                <input type="text" id="modelName" placeholder="e.g. GPT-4, Llama-3, Internal Bot">
+            </div>
+        </header>
+
+        <main class="grid">
+            <div class="card">
+                <h3>Bias & Fairness</h3>
+                <label>Likelihood (1-10)</label>
+                <input type="number" id="biasLikelihood" min="1" max="10" value="1">
+                <label>Impact (1-10)</label>
+                <input type="number" id="biasImpact" min="1" max="10" value="1">
+            </div>
+
+            <div class="card">
+                <h3>Security & Privacy</h3>
+                <label>Likelihood (1-10)</label>
+                <input type="number" id="secLikelihood" min="1" max="10" value="1">
+                <label>Impact (1-10)</label>
+                <input type="number" id="secImpact" min="1" max="10" value="1">
+            </div>
+
+            <div class="card">
+                <h3>Transparency</h3>
+                <label>Likelihood (1-10)</label>
+                <input type="number" id="transLikelihood" min="1" max="10" value="1">
+                <label>Impact (1-10)</label>
+                <input type="number" id="transImpact" min="1" max="10" value="1">
+            </div>
+        </main>
+
+        <section class="results-area">
+            <div class="button-group">
+                <button onclick="calculateTotalRisk()" class="btn-calc">Analyze Risk</button>
+                <button onclick="exportToPDF()" class="btn-pdf">Export PDF Report</button>
+            </div>
+            
+            <div id="resultDisplay" class="result-box">
+                <span id="scoreText">Score: --</span>
+                <p id="ratingText">Enter values and click Analyze.</p>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
