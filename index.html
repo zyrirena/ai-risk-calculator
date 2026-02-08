@@ -20,26 +20,44 @@
         <main class="grid">
             <div class="card">
                 <h3>Bias & Fairness</h3>
-                <label>Likelihood (1-10)</label>
-                <input type="number" id="biasLikelihood" min="1" max="10" value="1">
-                <label>Impact (1-10)</label>
-                <input type="number" id="biasImpact" min="1" max="10" value="1">
+                <table class="mini-ref">
+                    <tr><th>Score</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+                    <tr><td><strong>L</strong></td><td>Rare</td><td>Unlikely</td><td>Possible</td><td>Likely</td><td>Certain</td></tr>
+                    <tr><td><strong>I</strong></td><td>Insignif.</td><td>Minor</td><td>Moderate</td><td>Major</td><td>Catastrophic</td></tr>
+                </table>
+                <label>Likelihood (1-5)</label>
+                <input type="number" id="biasLikelihood" min="1" max="5" value="1" oninput="calculateTotalRisk()">
+                <label>Impact (1-5)</label>
+                <input type="number" id="biasImpact" min="1" max="5" value="1" oninput="calculateTotalRisk()">
+                <textarea id="biasNotes" placeholder="Specific bias findings..."></textarea>
             </div>
 
             <div class="card">
                 <h3>Security & Privacy</h3>
-                <label>Likelihood (1-10)</label>
-                <input type="number" id="secLikelihood" min="1" max="10" value="1">
-                <label>Impact (1-10)</label>
-                <input type="number" id="secImpact" min="1" max="10" value="1">
+                <table class="mini-ref">
+                    <tr><th>Score</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+                    <tr><td><strong>L</strong></td><td>Rare</td><td>Unlikely</td><td>Possible</td><td>Likely</td><td>Certain</td></tr>
+                    <tr><td><strong>I</strong></td><td>Insignif.</td><td>Minor</td><td>Moderate</td><td>Major</td><td>Catastrophic</td></tr>
+                </table>
+                <label>Likelihood (1-5)</label>
+                <input type="number" id="secLikelihood" min="1" max="5" value="1" oninput="calculateTotalRisk()">
+                <label>Impact (1-5)</label>
+                <input type="number" id="secImpact" min="1" max="5" value="1" oninput="calculateTotalRisk()">
+                <textarea id="secNotes" placeholder="Security vulnerabilities..."></textarea>
             </div>
 
             <div class="card">
                 <h3>Transparency</h3>
-                <label>Likelihood (1-10)</label>
-                <input type="number" id="transLikelihood" min="1" max="10" value="1">
-                <label>Impact (1-10)</label>
-                <input type="number" id="transImpact" min="1" max="10" value="1">
+                <table class="mini-ref">
+                    <tr><th>Score</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+                    <tr><td><strong>L</strong></td><td>Rare</td><td>Unlikely</td><td>Possible</td><td>Likely</td><td>Certain</td></tr>
+                    <tr><td><strong>I</strong></td><td>Insignif.</td><td>Minor</td><td>Moderate</td><td>Major</td><td>Catastrophic</td></tr>
+                </table>
+                <label>Likelihood (1-5)</label>
+                <input type="number" id="transLikelihood" min="1" max="5" value="1" oninput="calculateTotalRisk()">
+                <label>Impact (1-5)</label>
+                <input type="number" id="transImpact" min="1" max="5" value="1" oninput="calculateTotalRisk()">
+                <textarea id="transNotes" placeholder="Transparency gaps..."></textarea>
             </div>
         </main>
 
@@ -51,7 +69,12 @@
             
             <div id="resultDisplay" class="result-box">
                 <span id="scoreText">Score: --</span>
-                <p id="ratingText">Enter values and click Analyze.</p>
+                <p id="ratingText">Awaiting input...</p>
+            </div>
+
+            <div id="mitigationDisplay" class="mitigation-box" style="display: none;">
+                <h4>Recommended Mitigation Strategy</h4>
+                <ul id="strategyList"></ul>
             </div>
         </section>
     </div>
